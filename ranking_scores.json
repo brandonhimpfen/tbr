@@ -1,0 +1,40 @@
+{
+  "travel_blogs": [
+    {
+      "blog_name": "Wanderlust Adventures",
+      "content_quality_score": 9.5,
+      "relevance_score": 8.7,
+      "website_performance_score": 7.2,
+      "user_experience_design_score": 8.9,
+      "social_media_score": 9.1,
+      "domain_authority_backlinks_score": 8.5,
+      "brand_partnerships_sponsorships_score": 7.8,
+      "awards_recognition_score": 8.3,
+      "ranking_score": 8.3
+    },
+    {
+      "blog_name": "The Globetrotter",
+      "content_quality_score": 9.2,
+      "relevance_score": 8.4,
+      "website_performance_score": 8.1,
+      "user_experience_design_score": 9.0,
+      "social_media_score": 8.6,
+      "domain_authority_backlinks_score": 8.9,
+      "brand_partnerships_sponsorships_score": 8.2,
+      "awards_recognition_score": 8.5,
+      "ranking_score": 8.5
+    },
+    {
+      "blog_name": "Roaming Free",
+      "content_quality_score": 8.7,
+      "relevance_score": 7.9,
+      "website_performance_score": 7.5,
+      "user_experience_design_score": 7.9,
+      "social_media_score": 8.2,
+      "domain_authority_backlinks_score": 7.8,
+      "brand_partnerships_sponsorships_score": 6.9,
+      "awards_recognition_score": 7.5,
+      "ranking_score": 7.8
+    }
+  ]
+}
