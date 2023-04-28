@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Blog Ranking</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+	<script src="ranking_scores.json"></script>
+	<script>
+		window.onload = function() {
+			// Load the JSON file
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'ranking_scores.json', true);
+			xhr.onload = function() {
+				if (this.status === 200) {
+					var data = JSON.parse(this.responseText);
+
+					// Calculate the ranking score for each blog
+					for (var i = 0; i < data.length; i++) {
+						var blog = data[i];
+						var score = (blog.content_quality * 0.2) + (blog.relevance * 0.1) + (blog.traffic * 0.3) + (blog.engagement * 0.1) + (blog.social_media * 0.1) + (blog.user_experience * 0.1) + (blog.design * 0.1);
+
+						blog.ranking_score = score;
+					}
+
+					// Sort the data by ranking score in descending order
+					data.sort(function(a, b) {
+						return b.ranking_score - a.ranking_score;
+					});
+
+					// Display the data in a table
+					var table = document.createElement('table');
+					table.innerHTML = '<tr><th>Blog Name</th><th>Content Quality</th><th>Relevance</th><th>Traffic</th><th>Engagement</th><th>Social Media</th><th>User Experience</th><th>Design</th><th>Ranking Score</th></tr>';
+					for (var i = 0; i < data.length; i++) {
+						var blog = data[i];
+
+						var tr = document.createElement('tr');
+						tr.innerHTML = '<td>' + blog.name + '</td><td>' + blog.content_quality + '</td><td>' + blog.relevance + '</td><td>' + blog.traffic + '</td><td>' + blog.engagement + '</td><td>' + blog.social_media + '</td><td>' + blog.user_experience + '</td><td>' + blog.design + '</td><td>' + blog.ranking_score.toFixed(2) + '</td>';
+
+						table.appendChild(tr);
+					}
+
+					document.body.appendChild(table);
+				}
+			}
+			xhr.send();
+		}
+	</script>
+</head>
+<body>
+  <h1>Travel Blog Rankings</h1>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js'></script>
+</body>
+</html>
