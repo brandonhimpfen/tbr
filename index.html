@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Travel Blogs Rankings</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Blog Ranking</title>
+	<script src="ranking_scores.json"></script>
+</head>
+<body>
+  <div class="container">
+	<h1>Travel Blog Ranking Scores</h1>
+	<table class="table table-dark table-striped">
+		<tr>
+			<th>Blog</th>
+			<th>Awards and Recognition Score</th>
+			<th>Brand Partnership and Sponsorship Score</th>
+			<th>User Experience and Design Score</th>
+			<th>Social Media Score</th>
+			<th>Website Performance Score</th>
+			<th>Content Quality and Relevance Score</th>
+			<th>Domain Authority and Backlinks Score</th>
+			<th>Ranking Score</th>
+		</tr>
+		<script>
+			for (var i = 0; i < ranking_scores.length; i++) {
+				var blog = ranking_scores[i];
+				var row = document.createElement("tr");
+				var blog_name = document.createElement("td");
+				blog_name.innerText = blog.blog_name;
+				var awards_score = document.createElement("td");
+				awards_score.innerText = blog.awards_score;
+				var brand_score = document.createElement("td");
+				brand_score.innerText = blog.brand_score;
+				var ux_score = document.createElement("td");
+				ux_score.innerText = blog.ux_score;
+				var social_score = document.createElement("td");
+				social_score.innerText = blog.social_score;
+				var website_score = document.createElement("td");
+				website_score.innerText = blog.website_score;
+				var content_score = document.createElement("td");
+				content_score.innerText = blog.content_score;
+				var domain_score = document.createElement("td");
+				domain_score.innerText = blog.domain_score;
+				var rank_score = document.createElement("td");
+				rank_score.innerText = blog.rank_score;
+				row.appendChild(blog_name);
+				row.appendChild(awards_score);
+				row.appendChild(brand_score);
+				row.appendChild(ux_score);
+				row.appendChild(social_score);
+				row.appendChild(website_score);
+				row.appendChild(content_score);
+				row.appendChild(domain_score);
+				row.appendChild(rank_score);
+				document.getElementsByTagName("table")[0].appendChild(row);
+			}
+		</script>
+	</table>
+</body>
+</html>
+  </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js'></script>
+</body>
+</html>
